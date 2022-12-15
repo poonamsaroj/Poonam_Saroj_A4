@@ -37,8 +37,8 @@
                         <input type="text" id="quantity" name="quantity" class="form-control" required placeholder="10">
                     </div>
                     <div>
-                        <label id="price">Total Price:</label>
-                        <input type="hidden" name="price" id="price">
+                        <label id="pricetxt">Total Price:</label>
+                        <input type="number" name="price" id="price">
                     </div>
                     <footer class="text-right">
                         <a href="/" type="button" class="btn btn-default">Go Back</a>
@@ -51,9 +51,9 @@
     <script>
         const selectElement = document.getElementById('quantity');
         selectElement.addEventListener('change', (event) => {
-            const result = document.getElementById('price');
-            result.textContent = `Total Price: GST/HST: $15 + $${event.target.value} = $${Number(event.target.value) + Number(15)}`;
-            document.getElementById("price").value = Number(15) + Number(event.target.value);
+            const result = document.getElementById('pricetxt');
+            result.textContent = `Total Price: GST/HST: $15 + $${event.target.value}`;
+            document.getElementById("price").value = Number(event.target.value) + Number(15);
         });
     </script>
 </body>

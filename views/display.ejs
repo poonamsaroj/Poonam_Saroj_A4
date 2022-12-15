@@ -32,25 +32,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for(let i=0; i < orders.length; i++) {%>
-                        <tr>
-                            <td>
-                                <%= orders[i].orderId %>
-                            </td>
-                            <td>
-                                <%= orders[i].name %>
-                            </td>
-                            <td>
-                                <%= orders[i].food %>
-                            </td>
-                            <td>
-                                <%= orders[i].quantity %>
-                            </td>
-                            <td>
-                                <%= orders[i].price %>
-                            </td>
-                        </tr>
-                        <% } %>
+                    <tr>
+                        <td>
+                            <%= orders.orderId %>
+                        </td>
+                        <td>
+                            <%= orders.name %>
+                        </td>
+                        <td>
+                            <%= orders.food %>
+                        </td>
+                        <td>
+                            <%= orders.quantity %>
+                        </td>
+                        <td>
+                            <%= orders.price %>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

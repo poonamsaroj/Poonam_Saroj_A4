@@ -45,8 +45,8 @@ app.get('/search', async (req, res) => {
 // Get call to fetch one students
 app.post("/display", async (req, res) => {
     try {
-        const orders = await orderList.find(element => element.orderID.toLowerCase() == req.body.id.toLowerCase())
-        await res.redirect('display', { orders });
+        const orders = await orderList.find(element => element.orderId.toLowerCase() == req.body.orderId.toLowerCase())
+        await res.render('display', { orders });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
