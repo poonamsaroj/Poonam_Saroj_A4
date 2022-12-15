@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="addStudent" class="container">
+        <div class="card" style="width: 50rem; margin: 5% 0 0 30%;">
+            <form action="/display" method="post">
+                <input type="text" name="orderId" id="orderId" placeholder="search item by id">
+                <input type="submit" value="submit">
+            </form>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>orderid</th>
+                        <th>customer name</th>
+                        <th>food</th>
+                        <th>quant</th>
+                        <th>price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < orderList.length; i++) {%>
+                        <tr>
+                            <td>
+                                <%= orderList[i].orderId %>
+                            </td>
+                            <td>
+                                <%= orderList[i].name %>
+                            </td>
+                            <td>
+                                <%= orderList[i].food %>
+                            </td>
+                            <td>
+                                <%= orderList[i].quantity %>
+                            </td>
+                            <td>
+                                <%= orderList[i].price %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

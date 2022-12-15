@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="addStudent" class="container">
+        <div class="card" style="width: 50rem; margin: 5% 0 0 30%;">
+            <div class="card-body">
+                <form action="/register" method="post">
+                    <h4 class="card-title">Add Order</h4>
+                    <div class="form-group">
+                        <label>Order ID</label>
+                        <input type="text" id="orderId" name="orderId" class="form-control" required
+                            placeholder="ORD101">
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required
+                            placeholder="Firstname Lastname">
+                    </div>
+                    <div class="form-group">
+                        <label>Food to Order</label>
+                        <input type="text" id="food" name="food" class="form-control" required
+                            placeholder="Pizza, Biryani">
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="text" id="quantity" name="quantity" class="form-control" required placeholder="10">
+                    </div>
+                    <div>
+                        <label id="price">Total Price:</label>
+                        <input type="hidden" name="price" id="price">
+                    </div>
+                    <footer class="text-right">
+                        <a href="/" type="button" class="btn btn-default">Go Back</a>
+                        <input type="submit" class="btn btn-success" value="Add Order">
+                    </footer>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const selectElement = document.getElementById('quantity');
+        selectElement.addEventListener('change', (event) => {
+            const result = document.getElementById('price');
+            result.textContent = `Total Price: GST/HST: $15 + $${event.target.value} = $${Number(event.target.value) + Number(15)}`;
+            document.getElementById("price").value = Number(15) + Number(event.target.value);
+        });
+    </script>
+</body>
+
+</html>

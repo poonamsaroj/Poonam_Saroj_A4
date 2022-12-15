@@ -1,0 +1,20 @@
+.table-wrapper {
+    padding-top: 5%;
+    border-radius: 3px;
+}
+
+.table-title {
+    border-radius: 4px;
+    background: rgb(134, 54, 11);
+    color: #fff;
+    padding: 1%;
+    margin: 10px -10px;
+}
+
+.table-title h2 {
+    margin: 5px 0 0;
+}
+
+body {
+    padding-top: 1%;
+}

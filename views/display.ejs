@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Order Information List</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>orderid</th>
+                        <th>Name</th>
+                        <th>food</th>
+                        <th>price</th>
+                        <th>quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < orders.length; i++) {%>
+                        <tr>
+                            <td>
+                                <%= orders[i].orderId %>
+                            </td>
+                            <td>
+                                <%= orders[i].name %>
+                            </td>
+                            <td>
+                                <%= orders[i].food %>
+                            </td>
+                            <td>
+                                <%= orders[i].quantity %>
+                            </td>
+                            <td>
+                                <%= orders[i].price %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
